@@ -1,47 +1,22 @@
-# addition
-print('| Сложение |')
-try:
-    num1 = float(input("Введите первое значение: "))
-    num2 = float(input("Введите второе значение: "))
-    result = num1 + num2
-except ValueError:
-    print("Ошибка: Введено не число!\n")
-else:
-    print(f"Результат: {result}\n")
+print('(type: "Y" for YES, "N" for NO)\n')
 
-# subtraction
-print('| Вычитание |')
-try:
-    num1 = float(input("Введите первое значение: "))
-    num2 = float(input("Введите второе значение: "))
-    result = num1 - num2
-except ValueError:
-    print("Ошибка: Введено не число!\n")
+age = input('Are you 18 or older? -> ')
+if age == 'Y' or age == 'y':
+    country = input('Are you a citizen of Russia? -> ')
+    if country == 'Y' or country == 'y':
+        additional = input('Do you have a criminal record? -> ')
+        if additional == 'N' or additional == 'n':
+            print('\nПроверка пройдена: Вы можете проголосовать на выборах.')
+        elif additional == 'Y' or additional == 'y':
+            print('\nВам не разрешено голосовать.')
+        else:
+            print('\nОшибка ввода.. Начните заного.')
+    elif country == 'N' or country == 'n':
+        print('\nВам не разрешено голосовать.')
+    else:
+        print('\nОшибка ввода.. Начните заного.')
+elif age == 'N' or age == 'n':
+    print('\nВам не разрешено голосовать.')
 else:
-    print(f"Результат: {result}\n")
-
-# multiplication
-print('| Умножение |')
-try:
-    num1 = float(input("Введите первое значение: "))
-    num2 = float(input("Введите второе значение: "))
-    result = num1 * num2
-except ValueError:
-    print("Ошибка: Введено не число!\n")
-else:
-    print(f"Результат: {result}\n")
-
-# division
-print('| Деление |')
-try:
-    num1 = float(input("Введите первое значение: "))
-    num2 = float(input("Введите второе значение: "))
-    result = num1 / num2
-except ValueError:
-    print("Ошибка: Введено не число!")
-except ZeroDivisionError:
-    print("Ошибка: Деление на ноль!")
-else:
-    print(f"Результат: {result}")
-finally:
-    print("\nЗавершение работы..")
+    print('\nОшибка ввода.. Начните заного.')
+    
