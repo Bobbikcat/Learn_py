@@ -1,13 +1,15 @@
 # Countdown
 try:
-    user_num = float(input('Enter a positive Integer: '))
+    user_num = int(input('Enter a positive Integer: '))
 except ValueError:
-    print('Error: Not a number.')
+    print('Error: Invalid Value.')
 else:
-    user_num = int(abs(user_num))
-    print('Countdown\n')
-    while user_num > -1:
-        print(user_num)
-        user_num -= 1
+    if user_num >= 0:
+        print('Countdown\n')
+        while user_num > -1:
+            print(user_num)
+            user_num -= 1
+    else:
+        print('Error: Your number not a positive!')
 finally:
     print('\nСompleted..')
