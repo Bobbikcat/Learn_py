@@ -1,14 +1,7 @@
 # Elections
-user_input = ['y', 'Y', 'n', 'N']
-
 
 def check_input(arg_input):
-    user_pass = False
-    for i in user_input:
-        if i == arg_input:
-            user_pass = True
-            break
-    if not user_pass:
+    if arg_input != 'Y' and arg_input != 'N':
         print('\nError: Invalid input. Try again..')
         exit()
 
@@ -19,11 +12,11 @@ def passing_score(_age, _country, _record):
     record_issue = 'You have a criminal record'
     issue_list = []
 
-    if _age == 'n' or _age == 'N':
+    if _age == 'N':
         issue_list.append(age_issue)
-    if _country == 'n' or _country == 'N':
+    if _country == 'N':
         issue_list.append(country_issue)
-    if _record == 'y' or _record == 'Y':
+    if _record == 'Y':
         issue_list.append(record_issue)
 
     if len(issue_list) <= 0:
@@ -37,12 +30,15 @@ def passing_score(_age, _country, _record):
 print('(type: "Y" for YES, "N" for NO)\n')
 
 age = input('Are you 18 or older? -> ')
+age = age.upper()
 check_input(age)
 
 country = input('Are you a citizen of Russia? -> ')
+country = country.upper()
 check_input(country)
 
 record = input('Do you have a criminal record? -> ')
+record = record.upper()
 check_input(record)
 
 passing_score(age, country, record)
