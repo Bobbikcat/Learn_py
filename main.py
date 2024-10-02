@@ -1,8 +1,4 @@
 # Sum of Even Numbers. (обернул, но зачем ?)
-from itertools import cycle
-from math import trunc
-
-
 def even_sum():
     _even = 0
     for i in range(1, 100):
