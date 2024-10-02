@@ -1,7 +1,6 @@
 # Text Analyser
 
-p_marks = list('''!@#$%^&*()_+-=`~{}[];:/|\\?.,<>'"''')
-vowels = list('aeiouy')
+vowels = list('aeiouyаеёиоуыэюя')
 vowels_count = 0
 new_string = ''
 long_word = ''
@@ -11,10 +10,12 @@ words_list = []
 def input_handler():
     global new_string
     global words_list
+    global user_input
+    user_input = user_input.lower()
+
     for el in user_input:
-        for mark in p_marks:
-            if mark == el:
-                break
+        if el == el.upper() and el != ' ':
+            pass
         else:
             new_string += el
     else:
