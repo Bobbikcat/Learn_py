@@ -19,18 +19,15 @@ nums_amt = 0
 
 while True:
     try:
-        _bool = True
         user_input = float(input('\nEnter a negative number: '))
     except ValueError:
         print('ERROR: Invalid input. Try again..\n')
-        _bool = False
-    finally:
-        if _bool:
-            if user_input == abs(user_input):
-                nums_amt += 1
-                print(f'ENTERED: {user_input}')
-                print('Not a negative number! Try again..')
-            else:
-                print(f'ENTERED: {user_input}')
-                print(f'Entered numbers: {nums_amt + 1}')
-                break
+    else:
+        if user_input == abs(user_input):
+            nums_amt += 1
+            print(f'ENTERED: {user_input}')
+            print('Not a negative number! Try again..')
+        else:
+            print(f'ENTERED: {user_input}')
+            print(f'Entered numbers: {nums_amt + 1}')
+            break
