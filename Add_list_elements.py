@@ -10,8 +10,7 @@ def equalizer(l1, l2):
     num_list2 = l2.split()
 
     if len(num_list1) != len(num_list2):
-        x = len(num_list1) - len(num_list2)
-        x = abs(x)
+        x = abs(len(num_list1) - len(num_list2))
         for each in range(x):
             if len(num_list1) > len(num_list2):
                 num_list2.append('0')
