@@ -21,7 +21,10 @@ class Console:
         else:
             print('\n- The library of books is empty -\nreturn to user menu..\n')
 
-    def add_book(self, new_title, new_author, new_year):
+    def add_book(self):
+        new_title = input('\nEnter a new book - TITLE: ')
+        new_author = input('\nEnter a new book - AUTHOR: ')
+        new_year = input('\nEnter a new book - YEAR: ')
         new_book = Library(new_title, new_author, new_year)
         try:
             self.service.add_book(new_book)
@@ -35,22 +38,13 @@ class Console:
                 x = self.service.update_book(new_book.title, new_book)
                 print(f'\nYOUR BOOK "{x}" WAS UPDATED !\n')
 
-    def adding_book_form(self):
-        new_title = input('\nEnter a new book - TITLE: ')
-        new_author = input('\nEnter a new book - AUTHOR: ')
-        new_year = input('\nEnter a new book - YEAR: ')
-        self.add_book(new_title, new_author, new_year)
-
-    def remove_book(self, del_book):
+    def remove_book(self):
+        delete_book = input('\nEnter a NAME of the book: ').strip()
         try:
-            x = self.service.remove_book(del_book)
+            x = self.service.remove_book(delete_book)
             print(f'\nYOUR BOOK "{x}" WAS REMOVED..!\n')
         except Exception as e:
             print(e)
-
-    def removing_book_form(self):
-        delete_book = input('\nEnter a NAME of the book: ').strip()
-        self.remove_book(delete_book)
 
     def find_book(self):
         book = input('\nEnter a NAME of the book: ').strip()
@@ -108,9 +102,9 @@ class Console:
             if user_input.strip() == '1':
                 self.book_list_view()
             if user_input.strip() == '2':
-                self.adding_book_form()
+                self.add_book()
             if user_input.strip() == '3':
-                self.removing_book_form()
+                self.remove_book()
             if user_input.strip() == '4':
                 self.find_book()
             if user_input.strip() == '5':

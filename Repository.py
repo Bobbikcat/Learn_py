@@ -32,7 +32,6 @@ class Repository:
     def add_book(self, new_book):
         self.library_dict[new_book.title] = {f'Author': f'{new_book.author}', f'Year': f'{new_book.year}',
                                              f'In-stock': None}
-        # print(self.library_dict)
 
     def update_book(self, old_title, new_book):
         x = self.remove_book(old_title)
